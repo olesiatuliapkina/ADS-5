@@ -9,6 +9,7 @@ std::string infx2pstfx(std::string inf) {
     for (int i = 0; i < inf.length(); i++) {
         if (inf[i] >= '0' && inf[i] <= '9') {
             pst += inf[i];
+            pst += ' ';
         } else if (inf[i] == '(') {
             stack1.push('(');
         } else if (inf[i] == ')') {
