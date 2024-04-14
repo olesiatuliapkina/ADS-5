@@ -26,19 +26,20 @@ std::string infx2pstfx(std::string inf) {
             (inf[i] =='+' || stack1.get() =='*' || stack1.get() == '/')) {
                 pst += stack1.get();
                 pst += ' ';
+                stack1.pop();
             }
             stack1.push(inf[i]);
         }
     }
     while (!stack1.isempty()) {
         pst += stack1.get();
-        pst += ' ';    
+        pst += ' ';
         stack1.pop();
     }
     if (!pst.empty()) {
         pst.erase(pst.size() - 1);
     }
-    return pst
+    return pst;
 }
 
 int eval(std::string pref) {
